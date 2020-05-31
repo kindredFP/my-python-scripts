@@ -1,16 +1,16 @@
 from selenium import webdriver
 
 # need to make sure to have access to the chrome driver
-chromeDriverLocation = '..//resourceFiles/chromedriver'
+# create a resourceFiles Subfolder and make sure chromedriver is there
+chromeDriverLocation = 'resourceFiles/chromedriver'
+
+
 driver = webdriver.Chrome(chromeDriverLocation)
 driver.get("http://www.python.org")
 
-elem = driver.find_element_by_xpath('//*[@id="id-search-field"]')
+elem = driver.find_element_by_id("submit")
 
 elem.click()
-
-elem.send_keys("Search String")
-elem.submit()
 
 # navigate back from the results page
 driver.back()
